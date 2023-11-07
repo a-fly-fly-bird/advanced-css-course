@@ -137,3 +137,51 @@ Stack Overflow 上有人提出了类似的问题：[whats-the-different-between-
 ```
 是将父元素的左上角固定在距视图`top: 50%; left: 50%;`的位置，是父元素的左上角居中。使用`translate(-50%, -50%)`平移子元素后，子元素的中心居中。
 
+# @keyframes
+
+才知道有[@keyframes](https://developer.mozilla.org/zh-CN/docs/Web/CSS/@keyframes)这么强大的功能！
+
+> 关键帧 @keyframes at-rule 规则通过在动画序列中定义关键帧（或 waypoints）的样式来控制 CSS 动画序列中的中间步骤。和 转换 transition 相比，关键帧 keyframes 可以控制动画序列的中间步骤。
+
+
+首先在css中定义关键帧，
+```css
+@keyframes moveInLeft{
+  0% {
+    opacity: 0;
+    transform: translateX(-100px) rotate(0deg);
+  }
+
+  60%{
+    transform: rotate(60deg);
+  }
+
+  80%{
+    transform: translateX(10px);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+```
+然后使用关键帧，类似这样：
+```css
+.heading-primary-main{
+  display: block;
+  font-size: 80px;
+  font-weight: 400;
+  letter-spacing: 35px;
+
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+}
+```
+或者缩写为:
+```css
+animation: moveInRight 1s ease-out;
+```
+这里是关于[animation-timing-function](https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation-timing-function)的介绍，简而言之就是决定是平滑过渡还是怎么过渡。
+
