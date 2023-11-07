@@ -12,63 +12,65 @@ Dark green: #28b485
 */
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /*
   优先级从高到低的字体列表
 */
 body {
-    font-family: 'Long Cang', cursive, Georgia, 'Times New Roman', Times, serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.7;
-    color: #777;
-    padding: 30px;
+  font-family: 'Long Cang', cursive, Georgia, 'Times New Roman', Times, serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #777;
+  padding: 30px;
 }
 
 /*
   https://bennettfeely.com/clippy/
 */
 .header {
-    height: 95vh;
-    background-image: linear-gradient(to right bottom, rgba(128, 214, 113, 0.8), rgba(39, 180, 133, 0.8)), url(../img/hero.jpg);
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(128, 214, 113, 0.8), rgba(39, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 }
 
-.logo-box{
+.logo-box {
   position: absolute;
   top: 40px;
   left: 40px;
 }
 
-.logo{
+.logo {
   height: 35px;
 }
 
-.logo:hover{
+.logo:hover {
   transform: scale(120%);
 }
 
-.text-box{
+.text-box {
   position: absolute;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+  text-align: center;
 }
 
-.heading-primary{
+.heading-primary {
   color: #fff;
   text-transform: uppercase;
+  margin-bottom: 60px;
 }
 
 
-.heading-primary-main{
+.heading-primary-main {
   display: block;
   font-size: 80px;
   font-weight: 400;
@@ -78,7 +80,7 @@ body {
   animation-duration: 1s;
 }
 
-.heading-primary-sub{
+.heading-primary-sub {
   display: block;
   font-size: 30px;
   font-weight: 400;
@@ -86,38 +88,67 @@ body {
   animation: moveInRight 1s ease-out;
 }
 
-@keyframes moveInLeft{
+@keyframes moveInLeft {
   0% {
     opacity: 0;
     transform: translateX(-100px) rotate(0deg);
   }
 
-  60%{
+  60% {
     transform: rotate(60deg);
   }
 
-  80%{
+  80% {
     transform: translateX(10px);
   }
 
-  100%{
+  100% {
     opacity: 1;
     transform: translateX(0);
   }
 }
 
-@keyframes moveInRight{
+@keyframes moveInRight {
   0% {
     opacity: 0;
     transform: translateX(100px);
   }
 
-  80%{
+  80% {
     transform: translateX(-10px);
   }
 
-  100%{
+  100% {
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+/*
+  在CSS中，"all"是一个关键字，表示选择所有的元素。当你使用"transition all"时，你正在告诉浏览器你想要应用一个过渡效果到所有可过渡的元素上。这意味着，如果你有一个元素可以改变其颜色、大小或位置，那么这个过渡效果将应用于该元素的所有相关属性。
+*/
+
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 100px;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active{
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+  background-color: #fff;
+  color: #777;
 }

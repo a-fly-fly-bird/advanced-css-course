@@ -1,4 +1,4 @@
-我的[Udemy排名第一的高级CSS课程 Advanced CSS and Sass - 高级 CSS 和 Sass：Flexbox、网格、动画（中英文字幕）](ttps://www.bilibili.com/video/BV1n94y1o7yS/?p=6&share_source=copy_web&vd_source=3bfb0ec751c895fd26607d3661a4598c)笔记。
+我的[Udemy排名第一的高级CSS课程 Advanced CSS and Sass - 高级 CSS 和 Sass：Flexbox、网格、动画（中英文字幕）](https://www.bilibili.com/video/BV1n94y1o7yS/?p=6&share_source=copy_web&vd_source=3bfb0ec751c895fd26607d3661a4598c)笔记。
 
 想要系统学习CSS，[mdn web docs](https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web/CSS_basics)会是不错的文档。
 
@@ -184,4 +184,50 @@ Stack Overflow 上有人提出了类似的问题：[whats-the-different-between-
 animation: moveInRight 1s ease-out;
 ```
 这里是关于[animation-timing-function](https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation-timing-function)的介绍，简而言之就是决定是平滑过渡还是怎么过渡。
+
+# 伪类(Pseudo-classes)
+> CSS 伪类是添加到选择器的关键字，用于指定所选元素的特殊状态。例如，伪类 :hover 可以用于选择一个按钮，当用户的指针悬停在按钮上时，设置此按钮的样式。
+
+比如指针悬浮效果：
+```css
+button:hover {
+  color: blue;
+}
+```
+
+又非常多的伪类，非常有用。
+
+# display: inline-block
+尽管刚熟悉了`inline`和`block`，但是看到这里还是有点迷惑。重点学习一下。
+
+> 与 display: inline 相比，主要区别在于 display: inline-block 允许在元素上设置宽度和高度。
+> 
+> 同样，如果设置了 display: inline-block，将保留上下外边距/内边距，而 display: inline 则不会。
+> 
+> 与 display: block 相比，主要区别在于 display：inline-block 在元素之后不添加换行符，因此该元素可以位于其他元素旁边。
+
+# text-align
+除了之前的`transform`让元素居中外，还有什么更简单的方法吗？**text-align CSS 属性设置块元素或者单元格框的行内内容的水平对齐。**
+
+> text-align属性是用来描述一个行内元素是如何在身为父元素的块级元素中对齐。
+> 
+> 通过定义可以看出text-align属性并不能控制块级元素的对齐方式，它只对块级元素内的行内元素生效。
+
+所以
+```html
+ <div class="text-box">
+    <h1 class="heading-primary">
+        <span class="heading-primary-main">Outdoors</span>
+        <span class="heading-primary-sub">is where life happens</span>
+    </h1>
+
+    <a href="#" class="btn btn-white">Discover Our Tours</a>
+</div>
+```
+中，要想`<a href="#" class="btn btn-white">Discover Our Tours</a>`水平居中很简单，只要在它或者它的父元素上声明`text-align: center`即可。
+
+# box-shadow
+> CSS box-shadow 属性用于在元素的框架上添加阴影效果。你可以在同一个元素上设置多个阴影效果，并用逗号将他们分隔开。该属性可设置的值包括阴影的 X 轴偏移量、Y 轴偏移量、模糊半径、扩散半径和颜色。
+
+这个相对好理解。
 
