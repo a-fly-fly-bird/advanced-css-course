@@ -198,6 +198,7 @@ button:hover {
 又非常多的伪类，非常有用。
 
 # display: inline-block
+
 尽管刚熟悉了`inline`和`block`，但是看到这里还是有点迷惑。重点学习一下。
 
 > 与 display: inline 相比，主要区别在于 display: inline-block 允许在元素上设置宽度和高度。
@@ -230,4 +231,31 @@ button:hover {
 > CSS box-shadow 属性用于在元素的框架上添加阴影效果。你可以在同一个元素上设置多个阴影效果，并用逗号将他们分隔开。该属性可设置的值包括阴影的 X 轴偏移量、Y 轴偏移量、模糊半径、扩散半径和颜色。
 
 这个相对好理解。
+
+# 伪元素(Pseudo-elements)
+
+注意区分 `伪类` 和 `伪元素`！一个是一个冒号，一个是两个冒号。
+
+[伪元素](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Pseudo-elements)是一个附加至选择器末的关键词，允许你对被选择元素的特定部分修改样式。
+
+比如伪类中的`:hover`是指当前元素在鼠标悬浮时的状态，而伪元素是选中被选择元素的特定部分。
+
+## ::after (:after)
+CSS伪元素[::after](https://developer.mozilla.org/zh-CN/docs/Web/CSS/::after)用来创建一个伪元素，作为已选中元素的最后一个子元素。通常会配合content属性来为该元素添加装饰内容。这个虚拟元素默认是行内元素。
+
+不太好理解，还是需要结合教程中的代码理解。
+
+# z-index
+> CSS z-index 属性设置定位元素及其后代元素或 flex 项目的 Z 轴顺序。z-index 较大的重叠元素会覆盖较小的元素。
+
+这个MDN的示例非常清晰，就是控制图层的覆盖的。当Z-index的值设置为一个整数时,该整数是当前堆叠上下文中生成的div的堆栈级别。数字越小，越靠前。
+
+## 注意
+只有position的值为relative/absolute/fixed中的一个,Z-index才会生效。
+
+# animation-fill-mode
+
+> CSS 属性 animation-fill-mode 设置 CSS 动画在执行之前和之后如何将样式应用于其目标。
+
+[animation-fill-mode](https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation-fill-mode)也是一个非常有用的属性，也就是确定动画播放前和播放后的状态。
 

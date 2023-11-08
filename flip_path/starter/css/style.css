@@ -124,6 +124,18 @@ body {
   }
 }
 
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /*
   在CSS中，"all"是一个关键字，表示选择所有的元素。当你使用"transition all"时，你正在告诉浏览器你想要应用一个过渡效果到所有可过渡的元素上。这意味着，如果你有一个元素可以改变其颜色、大小或位置，那么这个过渡效果将应用于该元素的所有相关属性。
 */
@@ -136,6 +148,7 @@ body {
   display: inline-block;
   border-radius: 100px;
   transition: all 0.2s;
+  position: relative;
 }
 
 .btn:hover {
@@ -151,4 +164,40 @@ body {
 .btn-white {
   background-color: #fff;
   color: #777;
+}
+
+.btn::after{
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s;
+}
+
+/*
+这里的.btn::after和.btn-white::after实际上指的是同一个元素，因为按照定义，都是类对应的元素的最后一个子元素, 有了content就是创建的。
+所以解答了我之前的困惑，为什么视频里说必须要写content，哪怕是空字符，才会显示，但是下面的.btn-white::after并没有写也有效果。
+*/
+
+.btn-white::after{
+  background-color: #fff;
+}
+
+/*
+  这里实际上跟上面俩控制的也是同一个元素。
+*/
+
+.btn:hover::after{
+  transform: scaleX(1.4) scaleY(1.5);
+  opacity: 0;
+}
+
+.btn-animated{
+  animation: moveInBottom .5s ease-out 0.75s;
+  animation-fill-mode: backwards;
 }
